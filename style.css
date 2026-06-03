@@ -122,5 +122,14 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
+
+    &.skip:focus {
+      left: 0;
+      width: auto;
+      height: auto;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid;
+    }
   }
 }
