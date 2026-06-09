@@ -131,7 +131,11 @@
     }
 
     .topnav__homelink {
+      &:hover {
+        opacity: 0.9;
+      }
     }
+
     .topnav__logo {
       width: calc(70 / 16 * 1rem);
 
@@ -157,6 +161,11 @@
       color: var(--color-text-light);
       font-size: var(--fs-14);
       text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline 2px;
+        text-underline-offset: 4px;
+      }
     }
   }
 }
