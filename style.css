@@ -168,6 +168,10 @@
       }
     }
   }
+
+  .hero {
+    background-color: var(--c-purple);
+  }
 }
 
 @layer utility {
