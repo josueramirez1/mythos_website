@@ -1,3 +1,5 @@
+@layer global, component, utility;
+
 @layer global {
   /* source-sans-3-regular - latin */
   @font-face {
@@ -21,6 +23,7 @@
   :root {
     --fs-14: calc(14 / 16 * 1rem);
     --fs-16: calc(16 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
     --fs-24: calc(24 / 16 * 1rem);
     --fs-36: calc(36 / 16 * 1rem);
     --fs-42: calc(42 / 16 * 1rem);
@@ -31,6 +34,7 @@
     --font-size-h1: var(--fs-42);
     --font-size-h2: var(--fs-36);
     --font-size-h3: var(--fs-24);
+    --font-size-button: var(--fs-18);
 
     @media (width >= calc(600 / 16 * 1rem)) {
       --font-size-topnav: var(--fs-16);
@@ -54,6 +58,7 @@
     --color-header-bg: var(--c-purple);
     --color-hero-bg: var(--c-purple);
     --color-button-primary-bg: var(--c-teal);
+    --color-button-primary-border: var(--c-teal);
     --color-button-primary-text: var(--c-gray-dark);
     --color-button-secondary-bg: var(--c-transparent);
     --color-button-secondary-border: var(--c-white);
@@ -97,6 +102,26 @@
     text-decoration: none;
   }
 
+  p {
+    font-size: calc(18 / 16 * 1rem);
+
+    &.medium {
+      font-size: calc(20 / 16 * 1rem);
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        font-size: calc(24 / 16 * 1rem);
+      }
+    }
+
+    &.large {
+      font-size: calc(24 / 16 * 1rem);
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        font-size: calc(28 / 16 * 1rem);
+      }
+    }
+  }
+
   img,
   picture,
   svg {
@@ -115,6 +140,29 @@
 
 /* topnav is a compponent stand alone */
 @layer component {
+  .button {
+    display: inline-block;
+    font-size: var(--font-size-button);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-radius: 24px;
+
+    &.primary {
+      background-color: var(--color-button-primary-bg);
+      color: var(--color-button-primary-text);
+      border: 2px solid var(--color-button-primary-border);
+    }
+
+    &.secondary {
+      background-color: var(--color-button-secondary-bg);
+      color: var(--color-button-secondary-text);
+      border: 2px solid var(--color-button-secondary-border);
+    }
+  }
+
   .topnav {
     background-color: var(--color-header-bg);
 
@@ -170,7 +218,38 @@
   }
 
   .hero {
-    background-color: var(--c-purple);
+    background-color: var(--color-hero-bg);
+    color: var(--color-text-light);
+
+    .hero__wrapper {
+      padding-block: 30px 60px;
+      @media (width >= calc(600 / 16 * 1rem)) {
+        padding-block: 40px 80px;
+      }
+    }
+
+    .hero__image {
+      width: calc(200 / 16 * 1rem);
+      margin-block-end: 40px;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        width: calc(483 / 16 * 1rem);
+      }
+    }
+    .hero__text {
+    }
+    .hero__title {
+      margin-block-end: 12px;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        margin-block-end: 20px;
+      }
+    }
+    .hero__content {
+      margin-block-end: 40px;
+    }
+    .hero__buttons {
+    }
   }
 }
 
